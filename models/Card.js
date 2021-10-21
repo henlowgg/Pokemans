@@ -23,7 +23,7 @@ Card.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    collection_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
