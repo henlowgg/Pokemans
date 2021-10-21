@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     const newCollection = await Collection.create({
-      ...req.body,
+      ...req.user_id,
       user_id: req.session.user_id,
     });
 
