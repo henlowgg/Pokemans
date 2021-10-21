@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all collections and JOIN with user data
     const collectionData = await Collection.findAll({
       include: [
         {
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      collections, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/collection/:id', async (req, res) => {
   try {
     const collectionData = await Collection.findByPk(req.params.id, {
       include: [
