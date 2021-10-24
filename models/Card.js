@@ -15,15 +15,20 @@ Card.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    set: {
       type: DataTypes.STRING,
     },
-    date_created: {
+    type: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    collection_id: {
+    rarity: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    subtype: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
